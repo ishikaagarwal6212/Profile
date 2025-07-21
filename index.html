@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ishika Agarwal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #1A1025;
+      color: #fcddec;
+    }
+
+    .typing::after {
+      content: '|';
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center px-4">
+
+  <!-- Hero Section -->
+  <section class="text-center mb-6">
+    <h1 class="text-4xl md:text-6xl font-bold mb-2">Ishika Agarwal</h1>
+    <p id="bio" class="text-xl italic typing"></p>
+  </section>
+
+  <!-- Socials and Call Section -->
+  <section class="flex flex-wrap justify-center gap-6 mb-12">
+    <a href="https://www.instagram.com/iishikaa.a?igsh=MTRrbWFncmNlY2N6eA%3D%3D&utm_source=qr" target="_blank"
+      class="hover:scale-110 transition transform text-pink-300">📸 Instagram</a>
+    <a href="https://www.snapchat.com/add/iishikaa.a?share_id=xv06Ce5dQXiMMqPrFad3-A&locale=en_IN" target="_blank"
+      class="hover:scale-110 transition transform text-pink-300">👻 Snapchat</a>
+    <a href="tel:9823145457" class="hover:scale-110 transition transform text-pink-300">📞 Call Me</a>
+  </section>
+
+  <!-- Calming Quotes Section -->
+  <section class="mb-12 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Take a Breath 🌸</h2>
+    <p id="quoteText" class="mb-4 italic text-pink-200">Click to read something soothing ✨</p>
+    <button onclick="showQuote()"
+      class="bg-pink-500 hover:bg-pink-600 px-6 py-2 rounded-xl text-white font-medium transition">Get a Quote</button>
+  </section>
+
+  <!-- Fortune Cookie Section -->
+  <section class="mb-12 text-center">
+    <h2 class="text-2xl font-semibold mb-4">Fortune Cookie Says 🥠</h2>
+    <p id="fortuneText" class="mb-4 italic text-pink-200">Click below for a silly sweet message 💫</p>
+    <button onclick="showFortune()"
+      class="bg-pink-500 hover:bg-pink-600 px-6 py-2 rounded-xl text-white font-medium transition">Open Fortune</button>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-pink-400 px-4">
+    <p class="mt-2 italic">“My fortune cookie said I’m loved.”</p>
+  </footer>
+
+  <script>
+    const bio = "i’m basically pooh not from kabhi khushi kabhi gham but actual pooh so if you know me, i’m the short one in crop top and a round tummy";
+    let index = 0;
+    function typeBio() {
+      if (index < bio.length) {
+        document.getElementById("bio").textContent += bio.charAt(index);
+        index++;
+        setTimeout(typeBio, 40);
+      }
+    }
+    typeBio();
+
+    const quotes = [
+      "You are allowed to be both a masterpiece and a work in progress.",
+      "Peace begins with a smile.",
+      "Be gentle with yourself, you're doing the best you can.",
+      "Let your calm be contagious.",
+      "Inhale confidence, exhale doubt."
+    ];
+
+    function showQuote() {
+      const quoteText = document.getElementById('quoteText');
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      quoteText.textContent = randomQuote;
+    }
+
+    const fortunes = [
+      "You shine brighter than a phone at 2%.",
+      "Someone out there is smiling because of you.",
+      "Your aura is currently set to: sparkle.",
+      "You're the main character. Period.",
+      "This cookie thinks you're pretty great.",
+      "Reminder: You're doing amazing, sweetie."
+    ];
+
+    function showFortune() {
+      const fortuneText = document.getElementById('fortuneText');
+      const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+      fortuneText.textContent = randomFortune;
+    }
+  </script>
+
+</body>
+
+</html>
